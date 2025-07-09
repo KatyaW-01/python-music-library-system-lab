@@ -9,15 +9,19 @@ class Song:
         self.name = name
         self.artist = artist
         self.genre = genre
+        Song.artists
+        Song.genres
         Song.add_song_to_count()
+        Song.add_to_genres(genre)
 
     @classmethod
     def add_song_to_count(cls):
         cls.count += 1
 
     @classmethod
-    def add_to_genres(cls):
-        pass
+    def add_to_genres(cls,genre):
+        if genre not in cls.genres:
+            cls.genres.append(genre)
 
     @classmethod
     def add_to_artists(cls):
